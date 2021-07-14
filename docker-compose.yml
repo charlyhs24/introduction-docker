@@ -6,6 +6,10 @@ services:
 
   mysql:
     image: mysql:5.7.32
-
+    environment:
+      MYSQL_DATABASE: laraveldb
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
   nginx:
     image: nginx:stable-alpine
