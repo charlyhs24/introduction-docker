@@ -18,8 +18,12 @@ services:
     networks:
       - laravel
   php:
-    image: php:7.4.12-fpm-alpine
+    build:
+      context: .
+      dockerfile: php.dockerfile
     container_name: php
+    volumes:
+      - ./src:/var/www/html
     networks:
       - laravel
   mysql:
