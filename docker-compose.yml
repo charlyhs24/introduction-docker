@@ -5,6 +5,11 @@ networks:
     name: laravel
 
 services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    networks:
+      - laravel
   php:
     image: php:7.4.12-fpm-alpine
     container_name: php
@@ -18,10 +23,5 @@ services:
       MYSQL_USER: laravel
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
-    networks:
-      - laravel
-  nginx:
-    image: nginx:stable-alpine
-    container_name: nginx
     networks:
       - laravel
