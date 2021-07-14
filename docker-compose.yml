@@ -11,6 +11,8 @@ services:
     ports:
       - 80:80
       - 443:443
+    volumes:
+      - ./src:/usr/share/nginx/html;
     networks:
       - laravel
   php:
