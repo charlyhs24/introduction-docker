@@ -3,9 +3,10 @@ version: "3.8"
 services:
   php:
     image: php:7.4.12-fpm-alpine
-
+    container_name: php
   mysql:
     image: mysql:5.7.32
+    container_name: mysql
     environment:
       MYSQL_DATABASE: laraveldb
       MYSQL_USER: laravel
@@ -13,3 +14,4 @@ services:
       MYSQL_ROOT_PASSWORD: secret
   nginx:
     image: nginx:stable-alpine
+    container_name: nginx
